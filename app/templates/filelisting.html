@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<h1 class="page-header">File Listing</h1>
+{% for file in f_list %}
+  <ul>
+  {% if file[-4:] == '.jpg' or file[-4:] == '.png' or file[-4:] == '.gif' %} 
+    <li> {{file}} </li>
+    <img src='static/uploads/{{file}}' width="250" height="250"/>
+  {% else %}
+    <li> {{file}} </li>
+  {% endif %}
+  </ul>
+{% endfor %}
+{% endblock %}
